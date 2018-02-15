@@ -1,3 +1,8 @@
+package sorts;
+
+import personnages.Magicien;
+import personnages.Personnage;
+
 /**
  * Created by BonLa1731834 on 2018-02-01.
  */
@@ -10,8 +15,8 @@ public class MortSubite extends Sort {
     public void lanceSort(Personnage persoAttaque, Magicien magicien) {
         if (magicien.getMagie()>=10)
         {
-            System.out.println("Le Magicien " + magicien.type + " attaque!");
-            System.out.println("Le Magicien " + magicien.type + " utilise le sort Mort Subite, ce qui lui coûte " + getCout() + "pts de magie.");
+            System.out.println("Le Magicien " + magicien.getType() + " attaque!");
+            System.out.println("Le Magicien " + magicien.getType() + " utilise le sort Mort Subite, ce qui lui coûte " + getCout() + "pts de magie.");
 
             magicien.setMagie(magicien.getMagie()-10);
 
@@ -20,7 +25,7 @@ public class MortSubite extends Sort {
             {
                 System.out.println("Le " + persoAttaque.getNom() + " perd tous ses " + persoAttaque.getVie() + "pts de vie. Il lui en reste 0.");
                 persoAttaque.setVie(0);
-                System.out.println("Le " + persoAttaque.getNom() + " est mort, le Magicien Rouge a gagné!");
+                System.out.println("Le " + persoAttaque.getNom() + " est mort, le personnages.Magicien Rouge a gagné!");
             }
             else {
                 System.out.println("Il lui reste " + magicien.getMagie() + "pts de magie.");
@@ -28,7 +33,7 @@ public class MortSubite extends Sort {
             }
         }
         else {
-            System.out.println("Le Magicien " + magicien.type + " n'a pas assez de points magie pour lancer le sort Mort Subite");
+            System.out.println("Le Magicien " + magicien.getType() + " n'a pas assez de points magie pour lancer le sort Mort Subite");
         }
     }
 

@@ -1,3 +1,8 @@
+package sorts;
+
+import personnages.Magicien;
+import personnages.Personnage;
+
 /**
  * Created by BonLa1731834 on 2018-01-29.
  */

@@ -1,7 +1,11 @@
+package personnages;
+
+import armes.Contondant;
+
 /**
  * Created by BonLa1731834 on 2018-01-29.
  */
-public class Guerrier extends Personnage {
+public abstract class Guerrier extends Personnage  {
 
     private int force;
 
@@ -11,11 +15,11 @@ public class Guerrier extends Personnage {
 
     public void setForce(int force) {this.force = force;}
 
-    public void attaque(Personnage persoAttaque ){
+    public void attaque(Personnage persoAttaque){
 
         System.out.println("Le " + this.getNom() + " attaque!");
-        System.out.print("Le " + persoAttaque.getNom() + " perd " + ((getForce()*2)-persoAttaque.getDefense()) + "pts de vie.");
-        persoAttaque.setVie((persoAttaque.getVie())-((getForce()*2)-persoAttaque.getDefense()));
+        System.out.print("Le " + persoAttaque.getNom() + " perd " + (((getForce()*2)-persoAttaque.getDefense())+ getDegats()) + "pts de vie.");
+        persoAttaque.setVie((persoAttaque.getVie())-(((getForce()*2)-persoAttaque.getDefense())+getDegats()));
         if (persoAttaque.getVie() <0){persoAttaque.setVie(0);}
         System.out.println(" Il lui en reste " + persoAttaque.getVie());
 
